@@ -293,7 +293,7 @@ module RGeo
         if (wkb_parser_ = _wkb_parser)
           wkb_parser_.parse(str_)
         else
-          if data_[0, 1] =~ /[0-9a-fA-F]/
+          if str_[0, 1] =~ /[0-9a-fA-F]/
             _parse_wkb_impl([str_].pack("H*") )
           else
             _parse_wkb_impl(str_)
